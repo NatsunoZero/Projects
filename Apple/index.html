@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>温馨提示</title>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="bookmark" href="favicon.ico"/>
+	
+		<style>
+			*{
+				font-family:"Microsoft Yahei";font-size:16px;color:#434343;
+			}
+			.tips{
+				width:540px;
+				height:280px;
+				margin:0 auto;
+				margin-top:200px;
+				padding:30px;
+				border-radius:15px;
+				border:1px solid #ccc;
+				line-height:30px;
+				-webkit-box-shadow: 3px 3px 20px;
+				-moz-box-shadow: 3px 3px 20px;
+				box-shadow: 3px 3px 20px;
+			}
+			.tips p a{
+				text-decoration: none;
+			}
+			.tips span{
+				font-weight:bold;
+				padding:0 5px;
+			}
+			.red{
+				color:#f00;
+			}
+			.blue{
+				color:#136dd9;
+			}
+			h3{
+				color:#666;
+			}
+			.counter{
+				text-align:center;
+				font-size:14px;
+			}
+			#timer{
+				text-align:center;
+			}
+			#CopyRight{
+				position: absolute;
+				margin-bottom: 0px;
+				z-index: 999999;
+			}
+			#Rtmacha{
+				text-decoration:none;
+			}
+			#Rtmacha a:hover{
+				text-decoration:underline;
+			}
+		</style>
+	</head> 
+	<body> 
+		<div class="tips">
+		<h3>温馨提示：</h3>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;您访问的网站<span class="red">并非Apple官方网站</span>，本网站是个人团队学习web前端的作品，继续意味着您认同该观点。本网站地址为<span class="blue">www.rtmacha.com</span>，如果您不容易请立即关掉本网页。</p>
+		<p class="counter">页面将在<span id="timer">30</span>秒后跳转至该项目的主页，<a href="cn/">立即跳转</a></p>
+		<input type="button" onclick="window.close()" value="不同意并立即离开" style="color: red; margin: auto;" align="center"></input><br /><br />
+		<font id="CopyRight">
+			Copyright © 2016 - 2019 <a href="www.rtmacha.com/blog-blogichi/" id="Rtmacha">Rtmacha</a>
+		</font>
+		</div>
+		<script type="text/javascript"> 
+		var t=30; 
+		var timer = setInterval("refer()",1000);
+		function refer(){ 
+			t--; 
+		    if(t>=0){
+		    	document.getElementById('timer').innerHTML=t;
+		    }
+		    if(t==0){ 
+		        location="cn/";clearInterval(timer);
+		    } 
+		    
+		} 
+		</script> 
+	</body> 
+</html> 

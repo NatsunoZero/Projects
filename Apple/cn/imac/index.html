@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>iMac - Apple (中国大陆)</title>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="bookmark" href="favicon.ico"/>
+		<style type="text/css">
+			@import url("css/Figure.css");
+			@import url("css/nav.css");
+			@import url("css/trail.css");
+			#ShowTransparentTab{
+				display: none;
+				z-index: 5;
+			}
+			#TransparentSikaku{
+				display: table;
+				width: 100%;
+				height: 52px;
+				margin-top: 0px;
+				background: white;
+				position: fixed;
+				border-bottom: 1px solid #CFCFCF;
+				opacity: 0.8;
+				z-index: 7;
+			}
+			#TransparentSikaku1{
+				display: table;
+				width: 55%;
+				height: 52px;
+				left: 428px;
+				top: 85px;
+				margin-top: 0px;
+				background: white;
+				position: absolute;
+				border-bottom: 1px solid #CFCFCF;
+				opacity: 0.9;
+			}
+			#BottomMessageBox{
+				text-align: center;
+			}
+			#BottomMessageBox a{
+				text-decoration: none;
+			}
+			#BottomMessageBox td{
+				width: 247px;
+			}
+			.BottomMessageBoxTitle{
+				font-family: helvetica;
+				font-size: 18px;
+				font-weight: bold;
+				color: #333333;
+			}
+			.BottomMessageBoxText{
+				font-family: helvetica;
+				font-size: 8px;
+				color: #333333;
+			}
+			.BottomMessageBoxBlue{
+				color: #0070C9;
+			}
+			
+			#MiddleLongGreyInner{
+				display:table-cell; 
+	            vertical-align:middle;  
+	            text-align: center; /*设置文本水平居中*/  
+			}
+			.Title1{
+				font-size: 50px;
+				font-family: helvetica;
+			}
+			.ChooseB{
+				text-decoration: none;
+				color: #0070C9;
+				font-size: 15px;
+				font-family: helvetica;
+			}
+			
+			#MiddleLongGrey1{
+				width: 100%;
+				height: 564px;
+				background-color: #FAFAFA;
+				margin: auto;
+				text-align: center;
+				margin-top: 30px;
+				display: table;
+			}
+			#MiddleLongWhite1{
+				width: 100%;
+				height: 817px;
+				background-color: white;
+				margin: auto;
+				text-align: center;
+				margin-top: 30px;
+				display: table;
+			}
+			.Title2{
+				font-size: 48px;
+				font-family: helvetica;
+				font-weight: bold;
+			}
+			.Text2{
+				font-size: 15px;
+				font-family: helvetica;
+				color: #333333;
+			}
+			#MarkBoxShopBag{
+				position: absolute;
+				margin: auto;
+				margin-left: 1289px;
+				margin-top: 79px;
+				width: 290px;
+				height: 320px;
+				background-image: url(img/Cart/shoppingBag.png);
+				display: table;
+				text-align: center;
+				border-bottom: 1px;
+				/*background-color: #FFFFFF;*/
+				z-index: 6;
+			}
+			#CartTable{
+				display: none;
+				width: 260px;
+				height: 300px;
+				vertical-align:middle;  
+	            text-align: left; /*设置文本水平居中*/ 
+	            border-left: 0px;
+	            border-right: 0px;
+	            border-top: 0px
+	            /*border-bottom:thick dotted #E3E3E3;*/
+				line-height: 25px;
+				text-align: center;
+				border-collapse: collapse; 
+				padding:2px;				
+			}
+			#CartTable td{
+				width: 248px;
+				height: 35px;
+				border-bottom:thin solid #E3E3E3;
+				text-align: left;
+			}
+			
+			#CartTable a{
+				color: #0070C9;
+				vertical-align: middle;
+				text-decoration: none;
+				size: 10px;
+			}
+			.GreySmallText{
+				color: #888888;
+				font-size: 10px;
+			}
+			#TransparentMojiLeft{
+				font-family: helvetica;
+				font-size: 20px;
+				left: 462px;
+				text-align: left;
+			}
+			.GreyToBlueNoUnderLine{
+				font-size: 10px;
+				font-family: helvetica;
+				text-decoration: none;
+				color: #888888;
+			}
+			.GreyToBlueNoUnderLine:hover{
+				color: #2886D0;
+				text-decoration: none;
+			}
+			#CenterControlWhellChangeImg{
+				/*width: 100%;*/
+				height: 192px;
+				background-color: ##FFFFFF;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				margin-top: 30px;
+				/*margin-left: 415px;*/
+				display: table;
+			}
+			#CarouselFigure{
+				position: relative;
+				height: 652px;
+				width: 1101px;
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				background-image: url(img/CarouseFigure.png);
+			}
+			#CarouselFigureImg{
+				position: relative;
+				left: -220px;
+				/*top:0px;*/
+			}
+			#CarouselFigureMojiButton{
+				float: left;
+				vertical-align: middle;
+				z-index: 5;
+			}
+			#FigureMoji{
+				font-size: 30px;
+				color: #333333;
+				font-family: helvetica;
+				
+			}
+			#CarouselFigureButtonLeft{
+				outline: none;
+				position:absolute;
+				left: 240px;
+				top: 300px;
+			}
+			#CarouselFigureButtonRight{
+				outline: none;
+				position: absolute;
+				left: 1245px;
+				top: 300px;
+			}
+			#NaiYou{
+				background-image: url(img/CarouselFigureImg/Figure1.png);
+				/*background-color: red;*/
+				height: 652px;
+				width: 1500px;
+				text-align: center;
+				position: relative;
+				left: -220px;
+				display: table;
+				
+			}
+			#FigureIntroduction{
+				display:table-cell; 
+	            vertical-align:middle;  
+	            text-align: center; /*设置文本水平居中*/  
+			}
+			#bottom {
+				position: absolute;
+				top: 600px;
+				left: 700px;
+				z-index: 10;
+			}
+			#ChangeBigSmalliMacScrean{
+				width: 1446;
+				height: 1028px;
+				/*left: 10px;*/
+				display:table-cell; 
+	            vertical-align:middle;  
+	            text-align: center; /*设置文本水平居中*/  
+			}
+			#BigSmallImgChange{
+				width: 100%;
+				height: 100%;
+				/*left: 500px;*/
+			}
+			#MottomoUenoTitle{
+				display: none;
+				left: -300px;
+				font-family: helvetica;
+				font-size: 40px;
+			}
+			#MottomoUenoText{
+				display: none;
+				left: -300px;
+				font-family: helvetica;
+				font-size: 65px;
+			}
+			#SikakuText2{
+				color: #333333;
+				font-size: 25px;
+				font-family: helvetica;
+			}
+		</style>
+		<script type="text/javascript" src="js/Figure.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript">
+			function DisplayTransparentTrue(){
+				document.getElementById("TransparentSikaku").style.display="block";
+			}
+			function UnderlineTextBlue1(){
+				document.getElementById("BottomMessageLinksBlue1").style.textDecoration="underline";
+			}
+			function UnderlineTextUBlue1(){
+				document.getElementById("BottomMessageLinksBlue1").style.textDecoration="none";
+			}
+			function UnderlineTextBlue2(){
+				document.getElementById("BottomMessageLinksBlue2").style.textDecoration="underline";
+			}
+			function UnderlineTextUBlue2(){
+				document.getElementById("BottomMessageLinksBlue2").style.textDecoration="none";
+			}
+			function UnderlineTextBlue3(){
+				document.getElementById("BottomMessageLinksBlue3").style.textDecoration="underline";
+			}
+			function UnderlineTextUBlue3(){
+				document.getElementById("BottomMessageLinksBlue3").style.textDecoration="none";
+			}
+			function UnderlineTextBlue4(){
+				document.getElementById("BottomMessageLinksBlue4").style.textDecoration="underline";
+			}
+			function UnderlineTextUBlue4(){
+				document.getElementById("BottomMessageLinksBlue4").style.textDecoration="none";
+			}
+			$(function(e){
+				$("#ShoppingBagsIco").click(function(){
+					$("#MarkBoxShopBag").fadeToggle();
+					setTimeout(function(){
+					    //这里写时间到后执行的代码
+					    $("#WaitingGifCircle").hide();
+					    $("#CartTable").show();
+					}, 1500);
+					
+				});
+			});
+			$(function(){
+				$(window).scroll(function(){
+			          height = $(window).scrollTop();
+			   	  	  if(height > 45){
+			   	  	  	$('#ShowTransparentTab').fadeIn(10);
+			   	  	  	$('#TransparentSikaku1').fadeOut(1);
+			   	  	  }else{
+			   	  	  	$('#ShowTransparentTab').fadeOut(10);
+			   	  	  	$('#TransparentSikaku1').fadeIn(1);
+			   	  	  };
+				});
+			});
+			
+			var imgs = ["img/CarouselFigureImg/Figure1.png","img/CarouselFigureImg/Figure2.png","img/CarouselFigureImg/Figure3.png","img/CarouselFigureImg/Figure4.png","img/CarouselFigureImg/Figure5.png"]
+			var words = ['<img src="img/continuity_icon_1__fsn3cipimhiu_large.png" /><br /><font id="FigureMoji">用 iPhone 看信息,<br />用 iMac 回复。</font>'
+						,'<img src="img/continuity_icon_2__fz5h9l79656q_large.png" /><br /><font id="FigureMoji">通过隔空投送,<br />在 iPhone 和 iMac 之间<br />共享文件。</font>'
+						,'<img src="img/continuity_icon_3__cicvyfug11g2_large.png" /><br /><font id="FigureMoji">复制粘贴,<br />从 iPhone 到 iMac。</font>'
+						,'<img src="img/continuity_icon_4__f89qgvef87u6_large.png" /><br /><font id="FigureMoji">有来电,<br />iPhone 或 iMac 都能接。</font>'
+						,'<img src="img/continuity_icon_5__d0k95q8g5jsm_large.png" /><br /><font id="FigureMoji">iPhone 拍的照片,<br />都能在 iMac 自动现身。</font>']
+				
+			$(function(){
+			    var index = 0;
+				$("[name='d']").click(function(){
+					index  = parseInt($("[name='d']:checked").val());
+					$("#NaiYou").css("background","url('"+imgs[index]+"')");
+					$("#FigureIntroduction").html(words[index]);
+				   
+				})
+				$("#CarouselFigureButtonLeft").click(function(){
+				  	index  = parseInt($("[name='d']:checked").val());
+				  	if(index>0){
+				  		index=index-1;
+				  	}
+				  	else{
+				  		index=4;
+				  	}
+					$("#NaiYou").css("background","url('"+imgs[index]+"')");
+				  	$("input[value='"+index+"']").prop("checked",true);
+					$("#FigureIntroduction").html(words[index]);
+				  	
+				});
+				$("#CarouselFigureButtonRight").click(function(){
+				  	index  = parseInt($("[name='d']:checked").val());
+				  	if(index<4){
+				  		index=index+1;
+				  	}else{
+				  		index=0;
+				  	}
+					$("#NaiYou").css("background","url('"+imgs[index]+"')");
+				  	$("input[value='"+index+"']").prop("checked",true);
+					$("#FigureIntroduction").html(words[index]);
+				  	
+				});
+				setInterval(showtime,10000);
+				function showtime(){
+					index  = parseInt($("[name='d']:checked").val());
+				  	if(index<4){
+				  		index=index+1;
+				  	}else{
+				  		index=0;
+				  	}
+				  	
+					$("#NaiYou").css("background","url('"+imgs[index]+"')");
+				  	$("input[value='"+index+"']").prop("checked",true);
+					$("#FigureIntroduction").html(words[index]);
+				}
+			});
+			var  flag=1;
+			$(function(){
+				$(window).scroll(function(){
+			          height = $(window).scrollTop();
+			   	  	  if(height > 75){
+			   	  	  	if(flag){
+				   	  	  	$("#ChangeBigSmalliMacScrean").animate({
+								width:'802px',
+								height:'570px'
+							});
+							
+				   	  	  	flag=0;
+				   	  	  	$('#SitaNoImgs').fadeIn(1000);
+				   	  	  	$('#MottomoUenoTitle').fadeIn(1000);
+				   	  	  	$('#MottomoUenoText').fadeIn(1000);
+				   	  	  	var imgss = ["img/BigSmall/i1.png","img/BigSmall/i2.png","img/BigSmall/i3.png","img/BigSmall/i4.png","img/BigSmall/i5.png","img/BigSmall/i6.png","img/BigSmall/i7.png"]
+							var Iindex=0;
+							$("#BigSmallImgChange").prop("src",imgss[Iindex]);
+							$(function(){
+								
+								setInterval(function(){
+								    //这里写时间到后执行的代码
+								    $("#BigSmallImgChange").prop("src",imgss[Iindex+1]);
+								    if(Iindex<6){
+								    	Iindex++;
+								    }else{
+								    	Iindex=0;
+								    }
+								}, 1500);
+							});
+			   	  	  	}
+			   	  	  	
+			   	  	}
+				});
+				
+			});
+			
+			
+			
+		</script>
+		
+	</head>
+	<body id="body">
+		
+		<!--顶部透明横幅-->
+		<div id="ShowTransparentTab">
+			<div id="TransparentSikaku">
+				<div id="MiddleLongGreyInner">
+					<font id="TransparentMojiLeft">iMac</font>
+					<font class="GreySmallText" style="margin-left: 710px;">概览</font>
+					<a class="GreyToBlueNoUnderLine" href="https://www.apple.com/cn/imac/macos/" style="margin-left: 30px;" >macOS</a>
+					<a class="GreyToBlueNoUnderLine" href="https://www.apple.com/cn/imac/specs/" style="margin-left: 30px;">技术规格</a>
+					<a href=""><img src="img/BottomOfBuy.png" style="margin-left: 30px;"align="center" /></a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--顶部按钮导航栏-->
+		<div id="MarkBoxShopBag" style="display: none;">
+			<div id="MiddleLongGreyInner">
+				<img src="img/001mWx81gy6GMyt4oM777&690.gif" id="WaitingGifCircle" />
+				<table id="CartTable" align="center">
+					<tr>
+						<td style="height: 85px; text-align: center;"><font class="GreySmallText">你的购物袋是空的</font></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;"><img src="img/Cart/Bags.png" />&nbsp;购物袋</a></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;"><img src="img/Cart/collection.png" />&nbsp;收藏</a></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;"><img src="img/Cart/orders.png" />&nbsp;订单</a></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:;"><img src="img/Cart/accounts.png" />&nbsp;账户</a></td>
+					</tr>
+					<tr>
+						<td id="SaiGoNoLine"><a href="javascript:;"><img src="img/Cart/LongIn.png" />&nbsp;登录</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="top">
+			<div id="top1">
+				<!--1403-->
+				<span id="ads"><广告></span>
+			</div>
+			<div id="top2">
+				<div id="tabTop">
+					<table id="nav1">
+					<tr>
+						<td><a href="../"><img src="img/Apple1.svg" /></a></td>
+						<td><a href="../mac/" style="opacity:0.7; filter:alpha(opacity=70);" ><img src="img/linksMac.svg" /></a></td>
+						<td><a href="https://www.apple.com/cn/ipad/"><img src="img/linksiPad.svg" /></a></td>
+						<td><a href="../iphone/"><img src="img/linksiPhone.svg" /></a></td>
+						<td><a href="../watch/"><img src="img/LinksWatch.svg" /></a></td>
+						<td><a href="../music/"><img src="img/LinksMusic.svg" /></a></td>
+						<td><a href="https://support.apple.com/zh-cn"><img src="img/LinksSupport.svg" /></a></td>
+						<td><a href=""><img src="img/LinksSearch.svg" /></a></td>
+						<td><a href="javascript:;" id="ShoppingBagsIco" ><img src="img/bag.svg" /></a></td>
+					</tr>
+				</table>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div>
+			<div id="TransparentSikaku1">
+				<div id="MiddleLongGreyInner">
+					<font id="TransparentMojiLeft">iMac</font>
+					<font class="GreySmallText" style="margin-left: 710px;">概览</font>
+					<a class="GreyToBlueNoUnderLine" href="https://www.apple.com/cn/imac/macos/" style="margin-left: 30px;" >macOS</a>
+					<a class="GreyToBlueNoUnderLine" href="https://www.apple.com/cn/imac/specs/" style="margin-left: 30px;">技术规格</a>
+					<a href=""><img src="img/BottomOfBuy.png" style="margin-left: 30px;"align="center" /></a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<br /><br />
+		
+		
+		<!--Mac由大变小-->
+		<div id="CenterControlWhellChangeImg" >
+			<div id="MiddleLongGreyInner">
+				<font id="MottomoUenoTitle">iMac</font><br />
+				<font id="MottomoUenoText">外形过人,实力过分。</font><br /><br /><br />
+				<div id="ChangeBigSmalliMacScrean">
+					<img src="img/hero_hardware__fat5ykohogmu_large.jpg" id="BigSmallImgChange" /><br />
+				</div>
+				
+				<div id="SitaNoImgs" style="display: none;">
+					<img src="img/hero_keyboard__dwar2puq0t4y_large.jpg" /><br /><br /><br /><br />
+					<font id="SikakuText2">iMac 的背后，是我们始终不变的理想，那就是将强大而易用的科技融入优雅的一体式设<br />计，令台式电脑的使用体验焕然改观。新款 iMac 将这一概念带上了更高境界，它提供更<br />多绝妙的工具，让你能随心所欲自在发挥。新一代处理器、更快的内存、非凡的图形处理<br />器，一切都在 Mac 迄今最明亮、最绚丽的视网膜显示屏上大放异彩，强势融于一身，<br />强大更上一层。</font>
+				</div>
+			</div>
+		</div>
+			
+		<br /><br /><br /><br /><br />
+		<!--轮播-->
+		<div id="CarouselFigure">
+			<div id="NaiYou">
+				<input type="image" id="CarouselFigureButtonLeft" src="img/CarouselFigureImg/ButtonLeft.png" onclick="MaiImg()" />
+				<input type="image" id="CarouselFigureButtonRight" src="img/CarouselFigureImg/ButtonRight.png" onclick="NextImg()" />
+				<div id="bottom">
+					<input type="radio" name="d" value="0" id="d0" checked="checked" />
+					<input type="radio" name="d" value="1" id="d1" />
+					<input type="radio" name="d" value="2" id="d2" />
+					<input type="radio" name="d" value="3" id="d3" />
+					<input type="radio" name="d" value="4" id="d4" />
+				</div>
+			<div id="FigureIntroduction"><img src="img/continuity_icon_1__fsn3cipimhiu_large.png" /><br /><font id="FigureMoji">用 iPhone 看信息,<br />用 iMac 回复。</font></div>
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="MiddleLongGrey1">
+			<div id="MiddleLongGreyInner">
+				<span class="Title2">用你符合条件的电脑来以旧换新，<br />在购买新 iMac 时最高享受 <br />RMB 6730 的折抵优惠<sup style="font-size: 10px;">17</sup>。</span><br /><br />
+				<span class="Text2">用你符合条件的电脑来以旧换新，获得最高达 RMB 6730 的折抵优惠，或者免费<br />进行回收处理。这既有益于你，也有益于地球。</span><br /><br />
+				<a href="https://www.apple.com/cn/mac/compare/" class="ChooseB">进一步了解&nbsp;></a>
+			</div>
+		</div>
+		
+		<div id="MiddleLongWhite1">
+			<div id="MiddleLongGreyInner">
+				<span class="Title2">找款适合你的 iMac。</span><br /><br />
+				<a href="https://www.apple.com/cn/mac/compare/" class="ChooseB">比较各款 Mac 机型&nbsp;></a><br /><br /><br /><br />
+				<img src="img/buystrip_hero__giq7w4qd4tyu_large.jpg" />
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				<br />
+		<div class="DivColorGrey">
+			<div id="moji">
+				<br />
+				<span style="color: lightgrey; text-align: left;">
+					
+					<table id="BottomMessageBox">
+						<tr>
+							<td><a href="https://www.apple.com/cn/shop/goto/shipping_and_returns" id="BottomMessageLinks1" onmouseover="UnderlineTextBlue1()" onmouseout="UnderlineTextUBlue1()"><div><img src="img/shipping.svg" /><br /><span class="BottomMessageBoxTitle">免费送货</span><br /><br /><span class="BottomMessageBoxText">享受免费送货上门服务。</span><br /><br /><span class="BottomMessageBoxBlue" id="BottomMessageLinksBlue1">进一步了解&nbsp;></span></div></div></a></td>
+							<td><a href="https://itunes.apple.com/cn/app/apple-store/id375380948?mt=8" id="BottomMessageLinks2" onmouseover="UnderlineTextBlue2()" onmouseout="UnderlineTextUBlue2()"><div><img src="img/ShoppingBags.svg" /><br /><span class="BottomMessageBoxTitle">Apple Store app</span><br /><br /><span class="BottomMessageBoxText">以个性化的方式来选购<br />各类Apple新产品和配件。</span><br /><br /><span class="BottomMessageBoxBlue" id="BottomMessageLinksBlue2">下载&nbsp;↓></span></div></div></a></td>
+							<td><a href="https://www.apple.com/cn/shop/goto/ww/financing" id="BottomMessageLinks3" onmouseover="UnderlineTextBlue3()" onmouseout="UnderlineTextUBlue3()"><div><img src="img/RMB.svg" /><br /><span class="BottomMessageBoxTitle">分期付款</span><br /><br /><span class="BottomMessageBoxText">符合条件的信用卡用户可选择灵活的分<br />期付款方式。</span><br /><br /><span class="BottomMessageBoxBlue" id="BottomMessageLinksBlue3">进一步了解&nbsp;></span></div></div></a></td>
+							<td><a href="https://contactretail.apple.com/?pg=COM:imac&ap=COM&c=cn&l=zh" id="BottomMessageLinks4" onmouseover="UnderlineTextBlue4()" onmouseout="UnderlineTextUBlue4()"><div><img src="img/Message.svg" /><br /><span class="BottomMessageBoxTitle">获得购买帮助</span><br /><br /><span class="BottomMessageBoxText">有问题吗？致电Specialist专家或进<br />行在线交流。<br />致电 400-600-8888</span><br /><br /><span class="BottomMessageBoxBlue" id="BottomMessageLinksBlue4">联系我们&nbsp;></span></div></div></a></td>
+						</tr>
+					</table>
+					
+					<hr class="Line"/>
+					1.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。Autodesk Maya 2019 测试使用一个 399.6MB 的场景进行。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					2.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器、Radeon Pro Vega 20 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器、Radeon Pro Vega 48 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器、Radeon Pro 560 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器、Radeon Pro 580 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 DaVinci Resolve Studio 15 进行，采用 14 种常用特效和一个分辨率为 3840x2160、帧率为 24 fps 的 10 秒超高清项目。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					3.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Logic Pro X 10.4.4 进行，采用一个包含 200 个 Sculpture 合成器音轨的项目。播放时启用单个音轨，直至中央处理器超载为止。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					4.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Xcode 10.1 (10B61) 进行。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					5.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Mathematica v11.3.0 进行，采用内置基准 WolframMark。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					6.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Adobe Photoshop CC 2019 20.0.3 进行，采用结晶化、点状化、径向模糊、形状模糊、蒙尘与划痕以及中间值滤镜。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					7.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Adobe Lightroom Classic CC 8.2 进行，采用 780 张 RAW 图像。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					8.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Blackmagic Fusion 9.0.2 进行；将一个项目的 100 帧以全尺寸渲染至磁盘。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					9.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Compressor 4.4.3 进行，采用一个时长 30 秒的项目，项目包含分辨率为 4096x2160、帧率为 30 fps 的 Apple ProRes 422 视频。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					10.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Final Cut Pro 10.4.5 和 RED Apple Workflow Installer v13 提供的插件进行，采用一个时长 50 秒的项目，项目包含分辨率为 4096x2160、帧率为 23.98 fps 的 REDCODE® RAW 3:1 视频。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					11.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器、Radeon Pro Vega 20 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器、Radeon Pro Vega 48 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器、Radeon Pro 560 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器、Radeon Pro 580 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Cinema 4D R20 进行，采用一个 15.7MB 的场景。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					12.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器、Radeon Pro Vega 20 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器、Radeon Pro Vega 48 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器、Radeon Pro 560 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器、Radeon Pro 580 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。OsiriX MD v.10.0.2 测试使用 CT 扫描数据集进行，包含 512x512 立体像素组成的 1300 个切片。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					13.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器、Radeon Pro Vega 20 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器、Radeon Pro Vega 48 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器、Radeon Pro 560 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器、Radeon Pro 580 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Final Cut Pro 10.4.5 进行，采用一个时长 10 秒的项目，项目包含分辨率为 3840x2160、帧率为 30 fps 的 Apple ProRes 422 视频。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					14.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器、Radeon Pro Vega 20 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器、Radeon Pro Vega 48 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器、Radeon Pro 560 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器、Radeon Pro 580 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Final Cut Pro 10.4.5 进行，采用时长 50 秒的多机位项目，项目分别包含 9 个和 16 个分辨率为 4096x2160，帧率为 23.98 fps 的 Apple ProRes RAW 视频流。Final Cut Pro 中角度检视器的多机位播放设置为显示 16 个角度。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					15.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器、Radeon Pro Vega 20 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器、Radeon Pro Vega 48 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器、Radeon Pro 560 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器、Radeon Pro 580 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试使用 Rise of the Tomb Raider v1.0.5 进行，采用内置基准、2048x1152 分辨率 (21.5 英寸系统) 和 2560x1440 分辨率 (27 英寸系统) 以及极高设置，并禁用 Vsync 功能。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					16.Apple 于 2019 年 2 月使用试生产的配备 3.2GHz 六核 Intel Core i7 处理器、Radeon Pro Vega 20 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，试生产的配备 3.6GHz 八核 Intel Core i9 处理器、Radeon Pro Vega 48 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统；以及已上市的配备 3.6GHz 四核 Intel Core i7 处理器、Radeon Pro 560 图形处理器 (4GB VRAM) 和 32GB RAM 的 21.5 英寸 iMac 系统，已上市的配备 4.2GHz 四核 Intel Core i7 处理器、Radeon Pro 580 图形处理器 (8GB VRAM) 和 64GB RAM 的 27 英寸 iMac 系统进行了此项测试。测试在 F1 2017 v1.0.5 中进行，采用内置基准、2048x1152 分辨率 (21.5 英寸系统) 和 2560x1440 分辨率 (27 英寸系统) 以及超高设置，并禁用 Vsync 功能。性能测试在特定电脑系统上进行，能够大致反映 iMac 的性能。<br /><br />
+					17.实际折抵金额取决于设备的状况、配置及制造年份。年满 18 周岁及以上者才能享受此项折抵换购服务。并非所有设备都符合折抵换购条件。Apple 的折抵服务合作伙伴将提供关于符合条件设备的折抵与回收的更多信息。可能需要遵循限定条款和条件。所支付金额基于所收到的设备状况与在估算折抵金额时你所提供的描述是否相符。Apple 保留出于任何原因拒绝或限制任何设备 (及其数量) 的权利。在 Apple Store 零售店：该服务需出示政府颁发并附有照片的有效身份证件 (当地法律可能会要求存储该信息)。现有设备的折抵金额可用于冲抵购买新的 Apple 设备。该服务可能仅在部分零售店提供。部分 Apple Store 零售店可能会有附加条件。<br /><br />
+					内容需单独购买，供应状况可能有所变化。<br />
+				</span>
+				<br/>
+				<hr class="Line"/>
+				
+				
+				<!--<div id="Links"><a href="https://www.apple.com/cn/" id="AppleIconChangeColor"><img src="img/Apple1.png" /></a>&nbsp;&nbsp;&nbsp;<img src="img/separato.svg" />&nbsp;&nbsp;&nbsp;<font style="text-align: center; vertical-align:middle">Mac</font></div>-->
+				<br />
+				<table id="Links">
+					<tr>
+						<td><a href="../" id="AppleIconChangeColor"><img src="img/Apple1.png" /></a></td>
+						<td><img src="img/separato.svg" /></td>
+						<td><a href="../mac/">Mac</a></td>
+						<td><img src="img/separato.svg" /></td>
+						<td>iMac</td>
+					</tr>
+				</table>
+				
+				<br/>
+				
+				<table id="table">
+					<tr id="First">
+						<td>选购及了解</td>
+						<td>Apple Store 商店</td>
+						<td>教育应用</td>
+						<td>账户</td>
+						<td>关于 Apple</td>
+					</tr>
+					<tr>
+						<td><a href="">Mac</a></td>
+						<td><a href="https://www.apple.com/cn/retail/">查找零售店</a></td>
+						<td><a href="https://www.apple.com/cn/education/">Apple 与教育</a></td>
+						<td><a href="../shop/account/sign_in/">管理你的 Apple ID</a></td>
+						<td><a href="https://www.apple.com/cn/newsroom/">Newsroom</a></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.apple.com/cn/ipad/">iPad</a></td>
+						<td><a href="https://www.apple.com/cn/retail/geniusbar/">Genius Bar 天才吧</a></td>
+						<td><a href="https://www.apple.com/cn/shop/goto/educationrouting">高校师生选购</a></td>
+						<td><a href="../shop/account/sign_in/">Apple Store 账户</a></td>
+						<td><a href="https://www.apple.com/cn/leadership/">Apple 管理层</a></td>
+					</tr>
+					<tr>
+						<td><a href="../iphone/">iPhone</a></td>
+						<td><a href="https://www.apple.com/cn/today/">Today at Apple</a></td>
+						<td></td>
+						<td><a href="https://www.icloud.com/">iCloud.com</a></td>
+						<td><a href="https://www.apple.com/jobs/cn/">工作机会</a></td>
+					</tr>
+					<tr>
+						<td><a href="../watch/">Watch</a></td>
+						<td><a href="https://www.apple.com/cn/today/camp/">Apple 夏令营</a></td>
+						<td id="First">商务应用</td>
+						<td></td>
+						<td><a href="https://www.apple.com/cn/job-creation/">创造就业</a></td>
+					</tr>
+					<tr>
+						<td><a href="../music/">Music</a></td>
+						<td><a href="https://www.apple.com/cn/retail/fieldtrip/">Field Trip 课外活动</a></td>
+						<td><a href="https://www.apple.com/cn/business/">Apple 与商务</a></td>
+						<td id="First">Apple 价值观</td>
+						<td><a href="https://www.apple.com/cn/apple-events/">活动</a></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.apple.com/cn/itunes/">iTunes</a></td>
+						<td><a href="https://itunes.apple.com/cn/app/apple-store/id375380948?pt=2003&ct=footer&mt=8">Apple Store App</a></td>
+						<td><a href="https://www.apple.com/cn/retail/business/">商务选购</a></td>
+						<td><a href="https://www.apple.com/cn/accessibility/">辅助功能</a></td>
+						<td><a href="https://www.apple.com/cn/apple-events/">活动</a></td>
+					</tr>
+					<tr>
+						<td><a href="../homepod/">HomePod</a></td>
+						<td><a href="https://www.apple.com/cn/shop/goto/special_deals">翻新和优惠</a></td>
+						<td></td>
+						<td><a href="https://www.apple.com/cn/environment/">环境责任</a></td>
+						<td><a href="https://www.apple.com/cn/contact/">联系 Apple</a></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.apple.com/cn/ipod-touch/">iPod touch</a></td>
+						<td><a href="https://www.apple.com/cn/shop/goto/ww/financing">分期付款</a></td>
+						<td></td>
+						<td><a href="https://www.apple.com/cn/privacy/">隐私</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.apple.com/cn/shop/goto/buy_accessories">配件</a></td>
+						<td><a href="https://www.apple.com/cn/shop/goto/trade_in">Apple GiveBack 回馈计划</a></td>
+						<td></td>
+						<td><a href="https://www.apple.com/cn/supplier-responsibility/">供应商责任</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.apple.com/cn/shop/goto/giftcards">App Store 充值卡</a></td>
+						<td><a href="https://www.apple.com/cn/shop/goto/account">订单状态</a></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="https://www.apple.com/cn/shop/goto/help">选购帮助</a></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+				</table>
+			
+				<br />
+				<br />
+			
+				<span style="color: lightgrey; text-align: left;">更多选购方式：<a href="https://www.apple.com/cn/retail/" class="SmallChooseC" style="font-size: 10px;">前往 Apple Store 零售店</a>，致电 400-666-8800 或查找在你附近的<a href="https://locate.apple.com/cn/zh/" class="SmallChooseC" style="font-size: 10px;">授权经销商。</a></span>
+				<hr class="Line"/>
+				
+				<span style="color: lightgrey; text-align: left;">Copyright © 2019 Apple Inc. 保留所有权利。
+					<a href="https://www.apple.com/cn/privacy/privacy-policy/">隐私政策</a>
+					      | 
+					<a href="https://www.apple.com/cn/legal/terms/site.html">使用条款</a>
+					      | 
+					<a href="https://www.apple.com/cn/shop/goto/help/sales_refunds">销售政策</a>
+						  | 
+					<a href="https://www.apple.com/cn/legal/">法律信息</a>
+					      | 
+					<a href="https://www.apple.com/cn/sitemap/">网站地图</a>
+				</span>
+				<br />
+				<br />
+				
+				
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/favicon.ico " type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<title>创建您的Apple ID</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			a{text-decoration: none}
+			input{border-radius: 10px;border: 1px solid #ccc;font-size: 20px;width: 500px;height: 52px;}
+			select{border-radius: 10px;border: 1px solid #ccc;width: 500px;height: 52px;font-size: 20px;}
+			button{
+				background-color: transparent;
+				border: 0px;
+				outline: none;
+				cursor: pointer;
+			}
+		</style>
+		<style type="text/css">
+			#top{
+				width: 100%;height: 270px;background-color: black;position: relative;z-index: 1;
+			}
+			.top{
+				-webkit-filter: blur(10px);
+        		-ms-filter: blur(10px);    
+            	filter: blur(10px);
+            }
+            .my_protocol .input_agreement_protocol {
+                appearance: none;
+                -webkit-appearance: none;
+                outline: none;
+                display: none;
+            }
+            .my_protocol .input_agreement_protocol+span {
+                width: 15px;
+                height: 15px;
+                background-color: blue;
+                display: inline-block;
+                background:url(img/icon_checkbox.png) no-repeat;
+                background-position-x: 0px;
+                background-position-y: -25px;
+                position: relative;
+                top: 3px;
+            }
+            .my_protocol .input_agreement_protocol:checked+span {
+                background-position: 0 0px
+            }
+            .floatText {
+    			position: absolute;
+    			top: 667px;left: 713px;
+    			pointer-events: none;
+    			font-size: 30px;
+    			color: gray;
+			}
+		</style>
+	</head>
+	<body><span style="position: absolute;margin-left: 438px;margin-top: 419px;display: none;"id="wenhao"><img src="img/wenhao..png" style="transform: scale(0.2);"/></span>
+		<div style="background-color:lightgray;height: 62px;width: 100%;">
+			<span style="left: 444px;top: 15px; font-size: 28px;position: relative;">Apple ID</span>
+			<a href="../sign_in/" style="position: relative;left: 1116px;top: 10px;font-size: 12px;color: black;">登录</a>
+			<span style="position: relative;left: 1156px;top: 10px;font-size: 12px;color: gray;">创造您的 Apple ID</span>
+			<a href="" style="position: relative;left: 1196px;top: 10px;font-size: 12px;color: black;">常见问题解答</a>
+		</div>
+		<div id="top" class="top" align="center"></div>
+		<div style="position: relative;bottom: 133px; z-index: 2; font-size: 43px;color: white;"align="center">创建您的 Apple ID</div>
+		<div align="center" style="position: relative;font-size: 19px;">
+			只需一个 Apple ID，你即可访问 Apple 所有内容。<br/><br/>已有 Apple ID？
+			<a href=""style="color: deepskyblue;">在此查找></a>
+		</div><br />
+		<div align="center">
+			<input type="text"placeholder="&nbsp;&nbsp;&nbsp;姓氏" style="width: 231px;height: 52px;"/>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text"placeholder="&nbsp;&nbsp;&nbsp;名字" style="width: 231px;height: 52px;"/><br /><br />
+			<span style="position: relative;right: 215px;font-size: 13px;bottom: 2px;">国家或地区</span><br />
+			<select style="">
+				<option>中国大陆</option>
+				<option>中国小陆</option>
+				<option>中国中陆</option>
+			</select><br /><br />
+			
+			<div>
+				<div class="floatText">出生日期</div>
+				<input id="ww" class="inputBox" type="text" style="padding-top: 17px;"onfocus="qq()" onkeyup="qq1()"maxlength="10"/><br />
+			</div>
+			<span style="position: relative;bottom: 33px;left: 275px;"onmouseover="wenhao()"onmouseleave="wenhao1()"><img src="img/wenhao.png"/></span><br /><br />
+			
+			
+			<hr width="1111px" color="#FFF2EC" /><br />
+			<input type="text"placeholder="&nbsp;&nbsp;&nbsp;name@example.com" id="email"/><br />
+			<span style="font-size: 15px;position: relative;right: 163px;">这将是您的新 Apple ID。</span><br />
+			<span style="display: none;color: red;"id="error_email">电子邮箱格式不正确！</span><br />
+			<input type="password"placeholder="&nbsp;&nbsp;&nbsp;密码"id="password1" /><br /><br />
+			<input type="password"placeholder="&nbsp;&nbsp;&nbsp;确认密码"id="password2" onblur="password()"/><br />
+			<span style="color: red;display: none;"id="error_password">密码不一致！</span><br /><br />
+			<hr width="1111px" color="#FFF2EC" /><br />
+			<select>
+				<option style="display: none;"disabled selected>安全提示问题 1</option>
+				<option>你学会的第一道菜是什么？</option>
+				<option>你拥有的第一辆车是什么型号？</option>
+				<option>你的第一个上司叫什么名字？</option>
+			</select><br /><br />
+			<input type="text"placeholder="&nbsp;&nbsp;&nbsp;答案" onblur="answer()" id="answer1"/><br />
+			<span style="display: none;color: red;"id="error_answer1">答案8能为空！</span><br />
+			<select>
+				<option style="display: none;color: red;"disabled selected>安全提示问题 2</option>
+				<option>你学会的第一道菜是什么？</option>
+				<option>你拥有的第一辆车是什么型号？</option>
+				<option>你的第一个上司叫什么名字？</option>0
+			</select><br /><br />
+			<input type="text"placeholder="&nbsp;&nbsp;&nbsp;答案" onblur="answer2()" id="answer2"/><br />
+			<span style="display: none;color: red;"id="error_answer2">答案8能为空！</span><br />
+			<select>
+				<option style="display: none;"disabled selected>安全提示问题 3</option>
+				<option>你学会的第一道菜是什么？</option>
+				<option>你拥有的第一辆车是什么型号？</option>
+				<option>你的第一个上司叫什么名字？</option>
+			</select><br /><br />
+			<input type="text"placeholder="&nbsp;&nbsp;&nbsp;答案" onblur="answer3()" id="answer3"/><br />
+			<span style="display: none;color: red;"id="error_answer3">答案8能为空！</span><br />
+			这些问题将用于验证您的身份，以及在您忘记密码时恢复您的密码。<br /><br /><br />
+			<hr width="1111px" color="#FFF2EC" /><br /><br />
+			
+			<label class="my_protocol" style="cursor: pointer;position: relative;right: 95px;">
+			<input type="checkbox" class="input_agreement_protocol"/><span></span>
+			公告&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br /><span style="font-size: 12px;color: gray;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取有关 Apple 产品、服务和软件的公告、推荐和更新。</span>
+			</label><br /><br />
+			<label class="my_protocol" style="cursor: pointer;">
+			<input type="checkbox" class="input_agreement_protocol"/><span></span>
+			App、音乐、电影以及更多内容&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br /><span style="font-size: 12px;color: gray;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取有关 App、音乐、电影、电视、图书、播客等的最新发布、独家内容、特别优惠和推荐。</span>
+			</label><br /><br />
+			<hr width="1111px" color="#FFF2EC" /><br /><br />
+			<img id="uu"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text"placeholder="&nbsp;&nbsp;&nbsp;键入图中的字符"id="yzm" style="width: 231px;height: 52px;position: relative;bottom: 33px;"/>
+			<span id="error_yzm"style="display: none;position: relative;bottom: 33px;left: 53px;color: red;">验证码错误！</span><br />
+			<button style="position: relative;bottom: 23px;left: 60px;font-size: 17px;color:dodgerblue;"onclick="next()">看不清，换一组</button><br /><br />
+			<hr width="1111px" color="#FFF2EC" /><br /><br />
+			<img src="img/555.png"/><br />
+			<span style="font-size: 13px;color: gray;">您的 Apple ID 信息被用于确保您能够安全登录并访问您的数据。出于安全性、支持和报<br />
+			告的目的，Apple 会记录您的某些使用情况数据。了解 Apple 如何保护您的隐私。</span><br /><br />
+			<button onclick="tj()"><img src="img/jixu.png"/></button><br /><br /><br /><br />
+		</div>
+		<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+		<script type="text/javascript" >
+		var i=0;
+		var arr=['img/验证码.jpg','img/验证码2.jpg','img/验证码3.jpg'];
+		var brr=['41n9','jqaph','sfzef'];
+		var ma=document.getElementById("uu");
+			function yzm(){
+				ma.src=arr[i];
+			}
+			function next(){
+				i++;
+				if(i==3){i=0;}
+				yzm();
+			}
+			yzm();
+			function yz(){
+				if(document.getElementById("yzm").value!=brr[i]){
+					document.getElementById("error_yzm").style.display="block";
+					document.getElementById("yzm").style.borderColor="red";
+					document.getElementById("yzm").style.borderWidth="2px";
+				}
+				if(document.getElementById("yzm").value==brr[i]){
+					document.getElementById("error_yzm").style.display="none";
+					document.getElementById("yzm").style.borderColor="#CCC";
+					document.getElementById("yzm").style.borderWidth="1px";
+				}
+			}
+			function password(){
+				if(document.getElementById("password1").value!=document.getElementById("password2").value){
+					document.getElementById("error_password").style.display="block";
+					document.getElementById("password1").style.borderColor="red";
+					document.getElementById("password1").style.borderWidth="2px";
+					document.getElementById("password2").style.borderColor="red";
+					document.getElementById("password2").style.borderWidth="2px";
+				}
+				if(document.getElementById("password1").value==document.getElementById("password2").value){
+					document.getElementById("error_password").style.display="none";
+					document.getElementById("password1").style.borderColor="#CCC";
+					document.getElementById("password1").style.borderWidth="1px";
+					document.getElementById("password2").style.borderColor="#ccc";
+					document.getElementById("password2").style.borderWidth="1px";
+				}
+			}
+			function answer(){
+				if(document.getElementById("answer1").value==""){
+					document.getElementById("error_answer1").style.display="block";
+					document.getElementById("answer1").style.borderColor="red";
+					document.getElementById("answer1").style.borderWidth="2px";
+				}
+				if(document.getElementById("answer1").value!=""){
+					document.getElementById("error_answer1").style.display="none";
+					document.getElementById("answer1").style.borderColor="#ccc";
+					document.getElementById("answer1").style.borderWidth="1px";
+				}
+				
+				
+			}
+			function answer2(){
+				if(document.getElementById("answer2").value==""){
+					document.getElementById("error_answer2").style.display="block";
+					document.getElementById("answer2").style.borderColor="red";
+					document.getElementById("answer2").style.borderWidth="2px";
+				}
+				if(document.getElementById("answer2").value!=""){
+					document.getElementById("error_answer2").style.display="none";
+					document.getElementById("answer2").style.borderColor="#ccc";
+					document.getElementById("answer2").style.borderWidth="1px";
+				}
+			}
+			function answer3(){
+				if(document.getElementById("answer3").value==""){
+					document.getElementById("error_answer3").style.display="block";
+					document.getElementById("answer3").style.borderColor="red";
+					document.getElementById("answer3").style.borderWidth="2px";
+				}
+				if(document.getElementById("answer3").value!=""){
+					document.getElementById("error_answer3").style.display="none";
+					document.getElementById("answer3").style.borderColor="#ccc";
+					document.getElementById("answer3").style.borderWidth="1px";
+				}
+			}
+			
+			
+				$("#email").blur(function(){
+					var email=$("#email").val();
+					var reg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+					if(reg.test(email)==false){	
+    					document.getElementById("email").style.borderColor="red";
+    					document.getElementById("error_email").style.display="block";
+    					document.getElementById("email").style.borderWidth="2px";
+					} else{
+						document.getElementById("error_email").style.display="none";
+						document.getElementById("email").style.borderColor="#ccc";
+						document.getElementById("email").style.borderWidth="1px";
+					}	 		       
+  				}); 
+  				function wenhao(){
+  					document.getElementById("wenhao").style.display="block";
+  				}
+  				function wenhao1(){
+  					document.getElementById("wenhao").style.display="none";
+  				}
+				
+				$(".inputBox").focus(function () {
+            var inputitems = $(".inputBox");
+            var index = $(".inputBox").index(this);
+            var oldBrother = $(inputitems[index]).prev();
+            $(oldBrother).animate({
+                fontSize: '12px',
+            }, 500);
+        });
+ 
+        $(".inputBox").blur(function () {
+            if ($(this).val() == "") {
+                var inputitems = $(".inputBox");
+                var index = $(".inputBox").index(this);
+                var oldBrother = $(inputitems[index]).prev();
+                $(oldBrother).animate({
+                    fontSize: '30px',
+                }, 500);
+            }
+        });
+
+			
+			function tj(){
+				yz();
+				password();
+			}
+			var ii=1;
+		var sb1,sb2,sb3,sb4,sb5,sb6,sb7,sb8;
+		
+		function qq(){
+			document.getElementById("ww").value="yyyy/mm/dd";
+		}
+		function qq1(){
+			switch(ii){
+			case 1:
+			sb1=event.keyCode;sb1=String.fromCharCode(sb1);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+"yyy/mm/dd";  ii++;break;
+			case 2:
+			sb2=event.keyCode;sb2=String.fromCharCode(sb2);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+sb2+"yy/mm/dd";  ii++;break;
+			case 3:
+			sb3=event.keyCode;sb3=String.fromCharCode(sb3);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+sb2+sb3+"y/mm/dd";  ii++;break;
+			case 4:
+			sb4=event.keyCode;sb4=String.fromCharCode(sb4);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+sb2+sb3+sb4+"/mm/dd";  ii++;break;
+			case 5:
+			sb5=event.keyCode;sb5=String.fromCharCode(sb5);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+sb2+sb3+sb4+"/"+sb5+"m/dd";  ii++;break;
+			case 6:
+			sb6=event.keyCode;sb6=String.fromCharCode(sb6);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+sb2+sb3+sb4+"/"+sb5+sb6+"/dd";  ii++;break;
+			case 7:
+			sb7=event.keyCode;sb7=String.fromCharCode(sb7);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+sb2+sb3+sb4+"/"+sb5+sb6+"/"+sb7+"d";  ii++;break;
+			case 8:
+			sb8=event.keyCode;sb8=String.fromCharCode(sb8);
+			document.getElementById("ww").value="";
+			document.getElementById("ww").value=sb1+sb2+sb3+sb4+"/"+sb5+sb6+"/"+sb7+sb8;  ii++;break;
+			}
+		}
+		</script>
+		
+	</body>
+</html>

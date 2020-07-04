@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Watch Bands</title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script>
+			$(function (){
+				$("#btn").click(
+					function(){
+						$("#box4").fadeToggle()
+						setTimeout(function(){
+						$("#case1").fadeToggle()
+					}, 500);	
+						setTimeout(function(){
+						$("#box3").fadeToggle()//3000
+					}, 1000);	
+						
+				})
+			});
+			onload=function (){
+				    document.onmousedown=function(e){
+				        var speedX=0;  
+				        var lastX=0;    
+				
+				        var x=e.clientX-box.offsetLeft;
+			 
+			        document.onmousemove=function(e){
+						var moveX = e.clientX - x;
+						if(moveX < -9370) {
+                       		moveX = -9370
+                    	}
+						else if(moveX > 2434) {
+                        	moveX = 2434;
+                    	}
+				        box.style.left=moveX+'px';
+				        speedX = box.offsetLeft-lastX
+			            lastX=box.offsetLeft
+			            console.log(lastX);  
+			        };
+			        document.onmouseup=function(){
+			            document.onmousemove=document.onmouseup=null;
+			            move(box,speedX);
+			        };
+			        return false;
+			    };  
+			    function move(obj,speedX){
+			    window.setInterval(function(){//timer方法用来记录时间
+			            speedX*=0.95    
+			            obj.style.left=obj.offsetLeft+speedX+'px';
+			            if(Math.abs(speedX)<1) speedX=0;//abs用于返回函数的绝对值
+			            if(speedX==0){
+			                clearInterval(16);   
+			            }
+			            console.log(speedX);
+			        },8);  
+			    }
+			};
+		</script>
+		
+		<style>
+			body{
+        		margin: 0px;
+        		padding: 0px;
+        	}
+        	#content{
+        		position: relative;
+        		width: 100%px;
+        		height: 694px;
+        		overflow: hidden;
+        		text-align: center;
+        		background-color: #FAFAFA;
+        	}
+			#box {
+                position: absolute;
+                top: -153px;
+                width: 12200px;
+                left: 0px;
+                height: 1000px;
+                margin-bottom: 300px;
+                font-size: 50px;
+                z-index: 8;
+            }
+			#box img{			
+				float: left;
+			}   
+			#box3{
+				float: left;
+				z-index: 10;
+				margin-top: 0px;
+			}
+			#box4{
+				float: left;
+				margin-top: 0px;
+				margin-left: -1630px;
+			}
+			#case1{
+				position: absolute;
+				margin-left: 795px;
+				margin-top: 140px;
+				z-index: 20;
+			} 
+			#box2 {
+                position: absolute;
+                top: -153px;
+                width: 2200px;
+                height: 1000px;
+                margin-bottom: 300px;
+                background: red;
+                font-size: 50px;
+                z-index: 7;
+            }
+            #box2 img{			
+				float: left;
+			} 
+			#top1{
+				height: 81px;
+				width: 100%;
+				text-align: center;
+			}
+			button{
+				margin-top: 40px;
+    			background-color: #F4F4F4;
+     			border: 0px;
+     			font-size: 15px;
+     			font-family: "microsoft yahei";
+     		}
+			button:hover{
+				cursor: pointer;
+			}
+		</style>
+		
+</head>
+<body>
+	<div id="top1">
+		<button id="btn" >&nbsp;&nbsp;表&nbsp;款&nbsp;&nbsp;/
+			&nbsp;&nbsp;表&nbsp;带&nbsp;&nbsp;</button>
+	</div>
+	<img id="case1" src="0imgBands/case/1.png" />
+	<div id="content">
+		<div id="box">
+			<p id="box3" style="display: none;">
+				<img src="0imgBands/E/a1.png" />
+				<img src="0imgBands/E/sa2.png" />
+				<img src="0imgBands/E/a2.png "/>
+				<img src="0imgBands/E/sa3.png" />
+				<img src="0imgBands/E/a4.png" />
+				<img src="0imgBands/E/sa1.png" />
+				
+				<img src="0imgBands/E/b1.png " />
+				<img src="0imgBands/E/sb1.png" />
+				<img src="0imgBands/E/b2.png " />
+				<img src="0imgBands/E/sb2.png" />
+				<img src="0imgBands/E/b3.png " />
+				<img src="0imgBands/E/sb3.png" />
+				
+				<img src="0imgBands/E/c1.png " />
+				<img src="0imgBands/E/sc3.png" />
+				<img src="0imgBands/E/c2.png " />
+				<img src="0imgBands/E/sc1.png" />
+				<img src="0imgBands/E/c3.png " />
+				<img src="0imgBands/E/sc2.png" />
+				
+				<img src="0imgBands/E/d1.png " />
+				<img src="0imgBands/E/sd2.png" />
+				<img src="0imgBands/E/d2.png " />
+				<img src="0imgBands/E/sd3.png" />
+				<img src="0imgBands/E/d3.png " />
+				<img src="0imgBands/E/sd1.png" />
+			</p>
+			<p id="box4">
+				<img src="0imgBands/a/a5.jpg" />
+	        	<img src="0imgBands/a/a6.jpg" />
+	        	<img src="0imgBands/a/a7.jpg" />
+	        	<img src="0imgBands/a/a8.jpg" />
+	        	<img src="0imgBands/a/a9.jpg" />
+	        	<img src="0imgBands/a/a10.jpg" />
+	        	<img src="0imgBands/a/a11.jpg" />
+	        	<img src="0imgBands/a/a12.jpg" />
+			
+	        	<img src="0imgBands/b/b3.jpg" />
+	        	<img src="0imgBands/b/b4.jpg" />
+	        	<img src="0imgBands/b/b5.jpg" />
+	        	<img src="0imgBands/b/b6.jpg" />
+	        	<img src="0imgBands/b/b7.jpg" />
+	        	<img src="0imgBands/b/b8.jpg" />
+	        	
+	        	<img src="0imgBands/c/44/c4.jpg" />
+	        	<img src="0imgBands/c/44/c5.jpg" />
+	        	<img src="0imgBands/c/44/c10.jpg" />
+	        	<img src="0imgBands/c/44/c11.jpg" />
+	        	<img src="0imgBands/c/44/c12.jpg" />
+	        	<img src="0imgBands/c/44/c13.jpg" />
+	        	<img src="0imgBands/c/44/c14.jpg" />
+	        	<img src="0imgBands/c/44/c15.jpg" />
+	        	<img src="0imgBands/c/44/c16.jpg" />
+	        	<img src="0imgBands/c/44/c17.jpg" />
+	        	<img src="0imgBands/c/44/c18.jpg" />
+	        	<img src="0imgBands/c/44/c19.jpg" />
+	        	<img src="0imgBands/c/44/c20.jpg" />
+	        	
+	        	<img src="0imgBands/d/d5.jpg" />
+	        	<img src="0imgBands/d/d6.jpg" />
+	        	<img src="0imgBands/d/d7.jpg" />
+	        	<img src="0imgBands/d/d8.jpg" />
+	        	<img src="0imgBands/d/d9.jpg" />
+	        	<img src="0imgBands/d/d10.jpg" />
+	        	<img src="0imgBands/d/d11.jpg" />
+	        	<img src="0imgBands/d/d12.jpg" />
+        	</p>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
+

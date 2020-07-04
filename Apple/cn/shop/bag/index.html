@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="bookmark" href="favicon.ico"/>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+		<script type="text/javascript">  
+        
+            var flag=new Array(4);
+			function gostart(){    
+             document.getElementById("screenmask").style.display="none";
+            $("#please").slideUp();           
+         	document.getElementById("price"+1).innerHTML=15390;
+         	document.getElementById("price"+2).innerHTML=2299;
+         	document.getElementById("price"+3).innerHTML=3116;
+         	total();
+         	var num =document.getElementsByName("close");
+         
+         	for(i=1;i<num.length+1;i++){    	
+           document.getElementById("sendwordsbox"+i).style.display="none";  
+         	closed(i);
+         	}
+         }
+         	function screenlock(){
+         		$(document.body).toggleClass("html-body-overflow");
+         	}
+	           
+			function show(p){
+			 document.getElementById("open"+p).style.display="none";
+   			 document.getElementById("close"+p).style.display="inline";
+   			$("#iteminformation"+p).slideDown();
+            
+            
+			} 
+		
+			function closed(p){   //			不用close,会与内置函数重名
+
+			  document.getElementById("close"+p).style.display="none";
+	  		  document.getElementById("open"+p).style.display="inline";
+              $("#iteminformation"+p).slideUp()
+            
+			}
+			function remove(p){
+//				document.getElementById("goods"+p).style.display="none";
+				$("#goods"+p).remove()
+				flag[p]=1;
+				total();
+			}
+			
+	      function total(){
+       	   var sum=0;
+         	for(i=1;i<4;i++){
+         	if(flag[i])continue;
+         	sum=sum+parseInt(document.getElementById("price"+i).innerHTML);
+         	
+         	}
+         	document.getElementById("pricetotal").innerHTML=sum;
+         }
+      function one(singleprice,id){
+      
+          document.getElementById ("price"+id.charAt(6)).innerHTML=document.getElementById(id).value*singleprice;
+          total();
+         }
+      function sendwords (p) {
+
+       $("#sendwordsbox"+p).fadeIn();
+       $("#screenmask").fadeIn();
+       	screenlock();
+      	
+      }
+      function hidsendwords(p){
+
+       $("#sendwordsbox"+p).fadeOut();
+       $("#screenmask").fadeOut();
+       	screenlock();
+      }
+      function keepwords(p){
+      	document.getElementById("sendword"+p).innerHTML= document.getElementById("writeword"+p).value;
+        hidsendwords(p)
+      	
+      }
+     function ineedwrite(){
+      	$("#please").slideDown();
+      	
+      }
+      function iwontwrite(){
+        $("#please").slideUp();
+      }
+		</script>
+	
+  <style>
+  
+  	@import url("css/nav.css");
+  	
+  	.html-body-overflow
+  {
+  
+    overflow-y:hidden;
+  }
+  	button{
+  		background: transparent;        
+  		outline-width: thick;
+  		border: 0px;
+  		border-radius: 10px;
+  		cursor: pointer;
+  	}
+  	button :hover{
+  		border: 2px solid deepskyblue;
+  		border-radius: 10px;
+  	}
+  	.frist{
+
+  		margin-left: 460px;
+  		margin-top: 70px;
+  	
+  	}
+  	.second{	
+  		margin-left: 460px;
+  		margin-top: 0px;
+  			
+  	}
+  	.third{
+  		width: 1010px;
+  		margin-left: 460px;
+  	}
+  	.four{
+  		width: 1010px;
+   	 margin-left: 460px;
+   }
+  	.rmb{
+
+  		position: relative;
+  		font-size: 20px;
+  		 right: -595px;
+  		 top: -150px;
+  		  font-weight:bold;
+  	}
+   
+    .itemname{
+    	width: 455px;
+    	position: relative;
+    	
+  	
+    	 right: -254px;
+         top: -187px;
+         font-weight:bold;
+       	font-size: 23px;
+    }
+    .itemname:hover{
+    	color: #0086D9;
+    	cursor:pointer;
+    	
+    }
+     .information{
+    	position: relative;
+    	right: 115px;
+         top: -112px;
+         
+    	}
+   
+      .remove{
+    	position: relative;
+    	
+    	right: -940px;
+         top: -167px;
+    }	
+  	.select{
+  		position: relative;
+         right: -485px;
+         top: -150px;
+  		color: black;
+  		width: 40px;
+  		height: 37px;
+  		font-size: 30px;
+  	
+  	      border-color:white ;
+  	      appearance:none;  
+          -moz-appearance:none;  
+          -webkit-appearance:none;
+          background:url(img/select/select.png) no-repeat right center transparent;
+     }
+  	.option{
+  		color: black;
+  		font-size: 30px;
+  	}
+  	.specialtext{
+  		color: #0086D9;
+
+  	}
+  	.specialtext:hover{
+  		cursor:pointer;
+  		
+  	}
+  	.clickimg{
+  		cursor:pointer;
+  	}
+  	
+  	.iteminformation{
+  		width: 737px;
+  		height:383px;
+  	  	
+  		
+  		position: relative;
+  		top: -119px;
+  		right: -255px;
+
+  	
+  	}
+
+  	.line{
+  		height: 1px;
+        width: 735px;
+  		background: #D6D6D6;
+  	
+  	}
+  	.service{
+  		width: 737px;
+  		position: relative;
+  		top: -133px;
+  		right: -257px;
+  	}
+  	
+  	.longline{
+  		height: 1px;
+        width: 981px;
+  		background: #D6D6D6;
+  	     position: relative;
+  	     right: -9px;
+  	     top: -180px;
+  	}
+  	#secondlongline{
+  		
+  	}
+  	#secondline1{
+  			position: relative;
+  		top: -250px;
+  		right: -254px;
+  	}
+  	#secondline2{
+  		position: relative;
+  		right: -254px;
+  		top: -148px;
+  	}
+  	table tr td a{
+				text-decoration: none;
+				color: #888888;
+			}
+  	a:hover{
+				cursor:pointer;
+				text-decoration: underline;
+			}
+	.second a{
+		color: #0086D9;
+		
+		cursor:pointer;
+	}
+	.third a{
+		color: #0086D9;
+		
+		cursor:pointer;
+	}
+	.four a{
+		color: #0086D9;
+		
+		cursor:pointer;
+	}
+
+   .body{
+   	margin: 0px;
+   	padding: 0px;
+   }
+   .sendwords{
+   	position: relative;
+   	top: -142px;
+   	right: -256px;
+   	display: table;
+   	
+   	
+   }
+   .sendwords a{ 
+   	font-size: 15px;
+   	display: table-cell;
+   	vertical-align: middle;
+   
+   }
+ 
+   #secondline3{
+   		position: relative;
+   		right: 0px;
+  		top: 0px;
+   }
+   .sendwordsout{
+
+   	position: relative;
+   	top: -195px;
+   }
+   .sendwordnone{
+   	
+   	position: relative;
+   	top: 185px;
+   	right: -75px;
+   }
+   .sendwordany{
+   		position: relative;
+   		right: -167px;
+   		top: 190px;
+   }
+   .sendword{
+   	
+   }
+   .writeword{
+   	width: 492px;
+   	height: 99px;
+   }
+   #please{
+   	position: relative;
+   	right: -183px;
+   }
+   #setyou{
+
+    height: 176px;
+    background: white;
+   	position: relative;
+   	left: 0px;
+}
+
+  .sendwordsbox{
+   	width: 878px;
+   	height: 578px;
+   	position: fixed;
+   	top: 181px;
+   	right: 473px;
+   
+
+  background: white;
+   	z-index: 500;
+   
+   }
+   .screenmask{
+   	position: fixed;
+   	width: 100%;
+   	height: 940px;
+   	background: #4B4B4B;
+   	opacity: 0.7;
+   	z-index: 250;
+   }
+   #delivery{
+   	position: relative;
+   	top: -121px;
+   	right: -253px;
+   }
+  .last{
+  	position: relative;
+  	right: -772px;
+  	top: ;
+  }
+  .last1{
+  	position: relative;
+  	right:-468px ;
+  }
+  
+  </style>
+	</head>
+	
+	
+	<body onload="gostart()" class="body" id="body" style="overflow-x: hidden;">
+		
+		
+		<div class="screenmask" id="screenmask">	  </div>
+		
+		
+		 <div class="sendwordsbox" id="sendwordsbox1" > 
+		  <div><img src="img/sendword/sendwordstop.png" /> </div>
+		  <div class="sendwordsout"><img class="clickimg" onclick="hidsendwords(1)" src="img/sendword/sendwordsboxX.png"/>
+		  <button class="sendwordnone" id="wont" onclick="iwontwrite()"><img  src="img/sendword/sendwordnone.png"/></button>
+		  <button class="sendwordany" id="ineed" onclick="ineedwrite()"><img src="img/sendword/sendwordany.png" /> </button>
+		  </div>
+		  <div id="please">
+		  	<div > 输入你的赠言：</div>
+		  <div><br></div>
+		  <div><textarea class="writeword" id="writeword1" ></textarea></div>
+		  </div>
+		  <div id="setyou">
+		  <p align="center"><button ><img src="img/sendword/keep.png" onclick="keepwords(1)"></button></p>
+		   <p align="center" onclick="hidsendwords(1)"><a>取消</a></p>
+		  </div>
+		  </div>
+		  
+		  
+	    <div class="sendwordsbox" id="sendwordsbox2" > 
+		  <div><img src="img/sendword/sendwordstop.png" /> </div>
+		  <div class="sendwordsout"><img class="clickimg" onclick="hidsendwords(2)" src="img/sendword/sendwordsboxX.png"/>
+		  <button class="sendwordnone" id="wont" onclick="iwontwrite()"><img  src="img/sendword/sendwordnone.png"/></button>
+		  <button class="sendwordany" id="ineed" onclick="ineedwrite()"><img src="img/sendword/sendwordany.png" /> </button>
+		  </div>
+		  <div id="please">
+		  	<div > 输入你的赠言：</div>
+		  <div><br></div>
+		  <div><textarea class="writeword" id="writeword2" ></textarea></div>
+		  </div>
+		  <div id="setyou">
+		  <p align="center"><button onclick="keepwords(2)"><img src="img/sendword/keep.png" ></button></p>
+		   <p align="center" onclick="hidsendwords(2)"><a>取消</a></p>
+		  </div>
+		  </div>
+		   
+		   <div class="sendwordsbox" id="sendwordsbox3" > 
+		  <div><img src="img/sendword/sendwordstop.png" /> </div>
+		  <div class="sendwordsout"><img class="clickimg" onclick="hidsendwords(3)" src="img/sendword/sendwordsboxX.png"/>
+		  <button class="sendwordnone" id="wont" onclick="iwontwrite()"><img  src="img/sendword/sendwordnone.png"/></button>
+		  <button class="sendwordany" id="ineed" onclick="ineedwrite()"><img src="img/sendword/sendwordany.png" /> </button>
+		  </div>
+		  <div id="please">
+		  	<div > 输入你的赠言：</div>
+		  <div><br></div>
+		  <div><textarea class="writeword" id="writeword3" ></textarea></div>
+		  </div>
+		  <div id="setyou">
+		  <p align="center"><button ><img src="img/sendword/keep.png" onclick="keepwords(3)"></button></p>
+		   <p align="center" onclick="hidsendwords(3)"><a>取消</a></p>
+		  </div>
+		  </div>
+		  
+	<div id="top">
+			<!--<div id="top1">
+				<span id="ads"><广告></span>-->
+			</div>
+			<div id="top2">
+				<div id="tabTop">
+					<table id="nav1">
+					<tr>
+						<td><a href="../../"><img src="img/Apple1.svg" /></a></td>
+						<td><a href="../../mac/"><img src="img/linksMac.svg" /></a></td>
+						<td><a href="https://www.apple.com/cn/ipad/"><img src="img/linksiPad.svg" /></a></td>
+						<td><a href="../iphone/"><img src="img/linksiPhone.svg" /></a></td>
+						<td><a href="../../watch/"><img src="img/LinksWatch.svg" /></a></td>
+						<td><a href="../../music/"><img src="img/LinksMusic.svg" /></a></td>
+						<td><a href="https://support.apple.com/zh-cn"><img src="img/LinksSupport.svg" /></a></td>
+						<td><a href=""><img src="img/LinksSearch.svg" /></a></td>
+						<td><a href="../bag/"><img src="img/bag.svg" /></a></td>
+					</tr>
+				</table>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="frist">
+		<b style="font-size: 30px;">这是你购物袋中的商品</b>
+		<p>免费送货，还可免费退货。</p>
+		</div>
+		
+		<br />
+		
+		<br />
+
+		
+	<div class="second" id="goods1">
+	 <img class="clickimg" src="img/item/imac-27-cto-hero-201903.jpg" width="205px" height="173px"/>
+		<select id="onenum1" name="item" size="1" class="select" onchange="one(15390,id)"/>
+           <option class="option">1</option>
+             <option class="option">2</option>
+               <option class="option">3</option>
+                <option class="option">4</option>
+                 <option class="option">5</option>
+                  <option class="option">6</option>
+	    </select>
+	    <font class="rmb">RMB </font>     <span class="rmb" id="price1" ></span>
+	  	
+	  	<a class="information" id="open1"  onclick="show(1)" >显示产品详情 <img src="img/select/downtriangle.png"/></a>
+	  	<a class="information" id="close1" name="close" onclick="closed(1)" >隐藏产品详情  <img src="img/select/uptriangle.png"/></a>
+	     
+	   <div class="itemname"><font  >
+	  	27 英寸配备视网膜 5K 显示屏的 iMac
+	   </font></div>
+		<a class="remove"  onclick="remove(1)">移除</a>
+		
+		<div class="iteminformation" id="iteminformation1"> 
+        <img src="img/iteminformation/imcinformation.png"/>
+		</div>
+		<div class="service">
+		<img src="img/service/service_imac.png" />
+		</div>
+		<div class="line" id="secondline1"></div>
+		
+	   <div class="line" id="secondline2"></div>
+	    <div class="sendwords"> <img src="img/sendword/sendwordsiron.png" />
+	       <a class="edit" onclick="editword(1)">编辑</a>
+	      
+	    	<a class="sendword" onclick="sendwords(1)">添加</a> 
+	    	<span class="sendword" id="sendword1"> </span>
+	    </div>	
+	    <div id="delivery">
+	    	<img src="img/delivery/deliver.png"/>
+	    </div>
+
+		<div class="longline" id="secondlongline"></div>
+	
+	     <br />
+	  
+	     </div>
+	     
+	     
+	     
+	 <div class="third"  id="goods2">
+ <img src="img/item/12.jpg" width="205px" height="255px"/>
+		<select id="onenum2"   name="item" size="1" class="select" onchange="one(2299,id)"/>
+           <option class="option">1</option>
+             <option class="option">2</option>
+               <option class="option">3</option>
+                <option class="option">4</option>
+                 <option class="option">5</option>
+                  <option class="option"> 6</option>
+	     </select>
+	     <font class="rmb">RMB </font>   <span class="rmb" id="price2" ></span>
+	     
+	     	<a class="information" id="open2"  onclick="show(2)" >显示产品详情 <img src="img/select/downtriangle.png"/></a>
+	  	<a class="information" id="close2" name="close" onclick="closed(2)" >隐藏产品详情  <img src="img/select/uptriangle.png"/></a>
+	     <div class="itemname"><font  >
+	  	HomePod - 白色
+	   </font></div>
+		<a class="remove" onclick="remove(2)">移除</a>
+		
+		<div class="iteminformation" id="iteminformation2"> 
+        <img src="img/iteminformation/imcinformation.png"/>
+		</div>
+		<div class="service">
+		<img src="img/service/service_homepod.png" />
+		</div>
+		<div class="line" id="secondline1"></div>
+		
+	   <div class="line" id="secondline2"></div>
+	    <div class="sendwords"> <img src="img/sendword/sendwordsiron.png" />
+	       <a class="edit" onclick="editword(2)">编辑</a>
+	      
+	    	<a class="sendword" onclick="sendwords(2)">添加</a> 
+	    	<span class="sendword" id="sendword2"> </span>
+	    </div>	
+	    <div id="delivery">
+	    	<img src="img/delivery/deliver.png"/>
+	    </div>
+
+		<div class="longline" id="secondlongline"></div>
+	
+	     
+	     <br /></div>
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+ <div class="four"  id="goods3" >	     
+ <img src="img/item/40-alu-gold-sport-pink-sand-nc-s4-1up_GEO_CN.jpg" width="205px" height="173px"/>
+		<select id="onenum3"   name="item" size="1" class="select" onchange="one(3116,id)"/>
+           <option class="option">1</option>
+             <option class="option">2</option>
+               <option class="option">3</option>
+                <option class="option">4</option>
+                 <option class="option">5</option>
+                  <option class="option">6</option>
+	     </select>
+	    <font class="rmb">RMB </font>     <span class="rmb" id="price3"></span>
+	    	<a class="information" id="open3"  onclick="show(3)" >显示产品详情 <img src="img/select/downtriangle.png"/></a>
+	  	<a class="information" id="close3" name="close" onclick="closed(3)" >隐藏产品详情  <img src="img/select/uptriangle.png"/></a>
+	     <div class="itemname"><font  >
+	  	Apple Watch Series 4 GPS，40 
+
+	   </font></div>
+		<a class="remove" onclick="remove(3)">移除</a>
+		
+		<div class="iteminformation" id="iteminformation3"> 
+        <img src="img/iteminformation/imcinformation.png"/>
+		</div>
+		<div class="service">
+		<img src="img/service/service_iwatch.png" />
+		</div>
+		<div class="line" id="secondline1"></div>
+		
+	   <div class="line" id="secondline2"></div>
+	    <div class="sendwords"> <img src="img/sendword/sendwordsiron.png" />
+	       <a class="edit" onclick="editword(3)">编辑</a>
+	      
+	    	<a class="sendword" onclick="sendwords(3)">添加</a> 
+	    	<span class="sendword" id="sendword3"> </span>
+	    </div>	
+	    <div id="delivery">
+	    	<img src="img/delivery/deliver.png"/>
+	    </div>
+
+		<div class="longline" id="secondlongline"></div>
+	
+	     
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+         <br />
+         </div>
+         
+         
+         
+         
+         
+         
+         
+         <div class="last"><font style=" font-weight:bold; font-size: 23px;">总计  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+         	 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+         	 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RMB&nbsp; &nbsp;<span id="pricetotal" onload="total()"></span></font>
+</div>
+          <div class="last1">
+         	<img class="last2" src="img/last/last1.png"/></div>
+         	<div ><img  src="img/last/last2.png" /></div>
+         	<div> <img src="img/last/last3.png"/></div>
+         
+</font>
+	</body>
+</html>

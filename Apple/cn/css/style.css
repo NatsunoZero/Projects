@@ -1,0 +1,47 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+.DivColorGrey{
+	text-align: center;
+	background-color: #FAFAFA;
+	width: 100%;
+}
+.Title{
+	text-align: center;
+	font-weight: bold;
+	font-size: 28px;
+	font-family: "microsoft yahei";
+}
+.NormalText{
+	font-size: 21px;
+	font-family: "microsoft yahei";
+}
+.SmallTitle{
+	text-align: center;
+	font-weight: bold;
+	font-size: 35px;
+	font-family: "microsoft sans serif";
+}
+.SmallText{
+	font-size: 18px;
+	font-family: "microsoft yahei";
+}
+.Choose{
+	text-decoration: none;
+	color: #0070C9;
+	font-size: 18px;
+	font-family: "microsoft yahei";
+}
+.SmallChoose{
+	text-decoration: none;
+	color: #66BBE4;
+	font-size: 15px;
+	font-family: "microsoft yahei";
+}
+.SmallChooseC{
+	text-decoration: none;
+	color: #0070C9;
+	font-size: 15px;
+	font-family: "microsoft yahei";
+}

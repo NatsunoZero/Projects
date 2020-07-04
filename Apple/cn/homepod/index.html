@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="bookmark" href="favicon.ico"/>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+		<script type="text/javascript">  
+			var opatopimg=0;
+//			var opa=0;
+			var flag=1;
+        function gostart(){
+        	document.getElementById("topimg1").style.display="none";
+        	document.getElementById("topimg2").style.display="none";
+      	for(i=1;i<4;i++)
+     	document.getElementById("homepod"+i).style.display="none";
+        }
+        function comeon(){
+        	$("#homepod4").fadeIn(2000);
+        	$("#homepod0").fadeIn(1);
+        	 $(".homepod").css("position","relative");
+        	 $("#homepod0").css("z-index",6);
+        	 $("#homepod0").css("left",-40+'px');
+        }
+        function byebey(){
+        	$("#homepod4").fadeOut(1);
+        	$("#homepod0").fadeOut(1);
+        }
+        	$(function(){
+        		var to41=0;
+        		var to12=0;
+        		var to23=0;
+        		var to34=0;
+        		var to40=0;
+        		var to14=1;
+        		var to43=1;
+        		var to32=1;
+        		var to21=1;
+				$(window).scroll(function(){
+			          height = $(window).scrollTop();
+//			   	  	  if(height > 45){
+//			   	  	  	$('#ShowTransparentTab').fadeIn(10);
+//			   	  	  	$('#TransparentSikaku1').fadeout(1);
+//			   	  	  }else{
+//			   	  	  	$('#ShowTransparentTab').fadeOut(10);
+//			   	  	  	$('#TransparentSikaku1').fadeIn(1);
+//			   	  	  };
+//                 document.getElementById("show").innerHTML=height;
+                   
+                   if(height>=1830&&height<8000){
+                   	var up=86-(height-1830)/7170*83;
+                   	
+                   	 $(".homepod").css("top",up+'px');
+                   }
+                   if(height>=8000){
+              
+                   	
+                   	var up=3-(height-8000);
+                   	
+                   	
+                   	$(".homepod").css("top",up+'px');
+                   }
+                   
+                   
+
+                   if(height<1287&&height>=944)comeon();
+                   
+                   if(height>=1287&&height<1825){
+                    document.getElementById("homepod0").style.opacity=(1-(height-1287)/500);
+                      	
+                     $(".homepod").css("position","relative");
+                    for(i=1;i<4;i++)
+     	            document.getElementById("homepod"+i).style.display="none";
+                   if(!to14){
+                   	to14=1
+                   	to41=0;
+                   	  $("#homepod1").fadeOut(1000);	
+		              $("#homepod4").fadeIn(1); 
+                       
+                   }
+                   
+                   }
+                   
+                   
+                   
+                   
+                   if(height>=1825&&height<2000){
+                   	
+                   	 document.getElementById("homepod0").style.opacity=0;
+                   	  $(".homepod").css("position","fixed");
+                   
+                   }
+                
+                
+                
+                   if(height>=2000&&height<3200)
+                   { 
+                   	 document.getElementById("homepod0").style.opacity=0;
+                   	 $(".homepod").css("position","fixed");
+                   	 if(!to41){
+                   	   $("#homepod4").fadeOut(1000);	
+		              $("#homepod1").fadeIn(1000); 
+		              to41=1;
+		              to14=0;
+		              to12=0;
+                   	 }
+                   	 if(!to21){
+                   	   $("#homepod2").fadeOut(1000);	
+		              $("#homepod1").fadeIn(1000); 
+		              to21=1;
+		              to12=0;
+		              to14=0;
+		              
+                   }
+                   	   	
+                   }
+                   
+                   
+                   if(height>=3200&&height<4400){
+                   		 document.getElementById("homepod0").style.opacity=0;
+                   	 $(".homepod").css("position","fixed");
+                   	 if(!to12){
+                   	   $("#homepod1").fadeOut(1000);	
+		              $("#homepod2").fadeIn(1000); 
+		              to12=1;
+		              to21=0;
+		              to23=0;
+                   }
+                      if(!to32){
+                   	   $("#homepod3").fadeOut(1000);	
+		              $("#homepod2").fadeIn(1000); 
+		              to32=1;
+		              to23=0;
+		              to21=0;
+		              
+                   }
+                   	 
+                   
+                   }
+                      
+                   if(height>=4400&&height<5600){
+                   		 document.getElementById("homepod0").style.opacity=0;
+                   	 $(".homepod").css("position","fixed");
+                   	 if(!to23){
+                   	   $("#homepod2").fadeOut(1000);	
+		              $("#homepod3").fadeIn(1000); 
+		              to23=1;
+		              to32=0;
+		              to34=0;
+                   }
+                   	 	 if(!to43){
+                   	   $("#homepod4").fadeOut(1000);	
+		              $("#homepod3").fadeIn(1000);  
+		              to43=1;
+		              to32=0;
+		              to34=0;
+                    }
+                 
+                   }
+                   
+                   
+                     if(height>=5600&&height<6900){
+                   		 document.getElementById("homepod0").style.opacity=0;
+                   	 $(".homepod").css("position","fixed");
+                   	 if(!to34){
+                   	   $("#homepod3").fadeOut(1000);	
+		              $("#homepod4").fadeIn(1000);  
+		              to34=1;
+		              to43=0;
+		              to40=0;
+                    }
+                     	 if(!to04){
+                   	   $("#homepod0").fadeOut(1000);	
+		              $("#homepod4").fadeIn(1000);  
+		              to04=1;
+		              to40=0;
+		              to43=0;
+                    }
+                 
+                   
+                     }
+                     
+                     
+                   
+                       
+                       
+                        if(height>=6900&&height<8000){
+                   	document.getElementById("homepod0").style.opacity=1;
+                   	
+                   	 $(".homepod").css("position","fixed");
+                      $(".homepod").css("left","620px");
+                     
+                   	 if(!to40){
+                   	   $("#homepod4").fadeOut(2000);	
+		              $("#homepod0").fadeIn(1000);
+		               to40=1;
+		               to04=0;
+                      }
+                   	 
+                   	   
+                     }
+                    
+                        
+				});
+			});
+
+	
+		
+		function topimgcontrol(){
+		
+			opatopimg+=(event.wheelDelta/1200);
+			if(flag&&opatopimg<-0.1)
+			$("#topimg1").fadeIn(1000);
+			if(flag&&opatopimg<-0.3){
+			$("#topimg2").fadeIn(2000);
+			}
+		}
+       
+			</script>
+			
+			<style type="text/css">
+			@import url("css/nav.css");
+			#homepod0{
+				left: -40px;
+				z-index: 6;
+			}
+			.homepod{
+				position: relative;
+				left: 620px;
+				top: 86px;
+				z-index: 5;
+				
+			}
+			#show{
+				position: fixed;
+				color: red;
+			}
+			.background{
+				background: #FFFFFF;
+				width: 100%;
+				height: 1000px;
+			}
+			.backgroundpod{
+				background: #FFFFFF;
+				width: 100%;
+				height: 8000px;
+				background: white;
+				
+			}
+			.introduction{
+				position: relative;
+				left: 720px;
+				border-radius: 50px/50px;
+				background:#303030;
+				opacity: 0.9;
+				width: 443px;
+				height: 304px;
+				text-align: center;
+				font-family: "microsoft yahei";
+				color: #FFFFFF;
+				z-index: 10;
+			}
+			#introduction1{
+				top: 920px;
+			}
+			#introduction2{
+				
+				top: 1840px;
+			}
+			#introduction3{
+				
+				top: 2760px;
+			}
+			#introduction4{
+				
+				top: 3680px;
+			}
+			#introduction5{
+				
+				top: 4600px;
+			}
+            .introductiontext{
+            	font-size: 13px;
+            }
+            .introductiontitle{
+            	font-size: 20px;
+            }
+            .topimg{
+            	width: 770px;
+            	position: relative;
+				left: 575px;
+            }
+            #topimg1{
+            	z-index: 1;
+            }
+            #topimg2{
+            	
+            	top: -960px;
+            	z-index: 2;
+            }
+			</style>
+			
+			
+	</head>
+	
+	<body onload="gostart()" id="body" >
+		<span id="show"></span>
+		
+		<div id="top">
+			<div id="top1">
+				<span id="ads"><广告></span>
+			</div>
+			<div id="top2">
+				<div id="tabTop">
+					<table id="nav1">
+					<tr>
+						<td><a href="../index.html"><img src="img/Apple1.svg" /></a></td>
+						<td><a href="../mac/"><img src="img/linksMac.svg" /></a></td>
+						<td><a href="https://www.apple.com/cn/ipad/"><img src="img/linksiPad.svg" /></a></td>
+						<td><a href="../iphone/"><img src="img/linksiPhone.svg" /></a></td>
+						<td><a href="../watch/"><img src="img/LinksWatch.svg" /></a></td>
+						<td><a href="../music/" style="opacity:0.7; filter:alpha(opacity=70);"><img src="img/LinksMusic.svg" /></a></td>
+						<td><a href="https://support.apple.com/zh-cn"><img src="img/LinksSupport.svg" /></a></td>
+						<td><a href=""><img src="img/LinksSearch.svg" /></a></td>
+						<td><a href="../shop/bag/"><img src="img/bag.svg" /></a></td>
+					</tr>
+				</table>
+				</div>
+				
+			</div>
+		</div>
+		
+		<p align="center"><font style="  font-family:  'microsoft yahei';font-size: 60px; font-weight;500;">家的新声。</font></p>
+		
+		
+		<div class="background" onmousewheel="topimgcontrol()">
+		 <div class="topimg" id="topimg1"><img src="img/HomePod/hero_fallback_large.jpg"/></div>
+		 <div class="topimg" id="topimg2"><img src="img/HomePod/hero_hardware_startframe_large.jpg"/></div>
+	</div>
+		<div><img src="img/HomePod/mid.png"/></div>
+
+	
+	
+	<div class="backgroundpod" >
+			
+				 <img class="homepod" id="homepod1"   src="img/HomePod/guts_1_large.jpg" />
+		  <img class="homepod" id="homepod2"   src="img/HomePod/guts_2_large.jpg" />
+		    <img class="homepod" id="homepod3" src="img/HomePod/guts_3_large.jpg" />
+		      <img class="homepod" id="homepod4"   src="img/HomePod/guts_4_large.jpg" />
+		      <img class="homepod" id="homepod0"  src="img/HomePod/homepod_side_large.jpg" />
+		<div class="introduction" id="introduction1">
+			<br />
+           <br />
+			<font class="introductiontitle">重低音的宽广范围 <br />
+                             感受一下。<br /></font>
+  <font class="introductiontext">                           
+Apple 设计的高振幅低音单元在整个扬声器的顶部朝上设<br />
+置，因而能创造出比传统扬声器更为深远雄厚的低音效果。<br />
+六麦克风阵列与内置的低音均衡器麦克风协作，可分析房间<br />
+环境对低音的响应情况，并作出相应补偿，从而营造出丰富<br />
+饱满、始终如一的音质。强大的电机驱动振膜，振幅高达 20<br />
+ 毫米，即使在音量较低时，低音效果同样清晰震撼。</font>
+		</div>
+	
+			
+		<div class="introduction" id="introduction2">
+			<br />
+           <br />
+			<font class="introductiontitle">离得虽远，<br />
+                           却听得真切。<br /></font>
+  <font class="introductiontext">                           
+HomePod 内置六个环形排列的麦克风，用来捕捉房间内<br />
+的各种声音。有了先进的信号处理技术，再加上回声和噪声<br />
+消除功能，你只要说声“嘿 Siri”，HomePod 就会听到你的<br />
+呼唤，即使你正在房间的另一端，家里还大声放着音乐，也无<br />
+需特地提高音量。当 HomePod 识别出“嘿 Siri”之后，你<br />
+ 说的话就会被加密并匿名发送至 Apple 服务器，不会与你<br>
+ 的 Apple ID 关联。
+  </font>
+		</div>
+	
+			<div class="introduction" id="introduction3">
+			<br />
+           <br />
+			<font class="introductiontitle">高保真音质，<br />
+                         总环绕在你耳边。<br /></font>
+  <font class="introductiontext">                           
+在特制的七波束成形高音单元阵列中，每个单元均配有独立<br />
+的扩音器，从而带来极佳的方向控制力。这些高音单元置于<br />
+扬声器的底部，采用折叠号角式设计，可将音乐源源不断地<br />
+传向中心，再以 360 度的形式从底部扩出，营造出全环绕式<br />
+的空间感。这几乎完全消除了先前的平面反射声，带来始终<br />
+ 如一的高清音质。
+
+  </font>
+		</div>
+			<div class="introduction" id="introduction4">
+			<br />
+           <br />
+			<font class="introductiontitle">给扬声器一个更聪明的大脑。<br />
+                         总环绕在你耳边。<br /></font>
+  <font class="introductiontext">                           
+Apple 设计的 A8 芯片将诸多出色的创新音响技术巧妙融<br />
+合于 HomePod 之中。先进的信号处理技术，让 Siri 在播<br />
+放音乐时也能听到你的指令。录音棚级别的实时处理技术，<br />
+在避免失真的同时带来出众的低音效果。还有提前一步的高<br />
+速缓冲，以及对直达声和环境声的高速上混处理。让你每时<br />
+ 每刻，都能尽享动人音色。<br />
+
+  </font> 
+		</div>
+	
+  		
+			<div class="introduction" id="introduction5">
+			<br />
+           <br />
+			<font class="introductiontitle">看起来悦目，<br />
+                        听起来悦耳。<br /></font>
+  <font class="introductiontext">                           
+HomePod 采用无缝式网眼织物包覆设计，兼具优雅的美<br />
+学外观和出众的声学性能。它有白色和深空灰色两款可供选<br />
+择，从任何角度看都精巧雅致，而声波却能自由穿透，<br />
+宛若无物。<br />
+
+
+  </font> 
+		</div>
+	
+	
+	</div>
+
+	</body>
+</html>

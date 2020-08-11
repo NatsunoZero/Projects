@@ -1,0 +1,320 @@
+@font-face {
+				font-family: 'MyFontOne';
+				/*字体名称*/
+				src: url('./font/KFOlCnqEu92Fr1MmWUlfBBc4.woff2') format("woff2");
+				/*字体源文件*/
+			}
+			
+			@font-face {
+				font-family: 'MyFontTwo';
+				/*字体名称*/
+				src: url('./font/KFOlCnqEu92Fr1MmYUtfBBc4.woff2') format("woff2");
+				/*字体源文件*/
+			}
+			
+			@font-face {
+				font-family: 'MyFontThree';
+				/*字体名称*/
+				src: url('./font/KFOmCnqEu92Fr1Mu4mxK.woff2') format("woff2");
+				/*字体源文件*/
+			}
+			
+			@font-face {
+				font-family: "One";
+				src: url("/fonts/KFOlCnqEu92Fr1MmWUlfBBc4.woff2") format("woff2");
+				/*后缀是字体文件格式 常见有ttf svg等*/
+			}
+			
+			{
+				font-family: MyFontOne;
+			}
+			
+			.styleForBody {
+				margin: 0;
+			}
+			
+			.nc3-top {
+				margin: 0;
+				width: 100%;
+				margin-top: 0px;
+			}
+			
+			.nc3-top a {
+				display: inline-block;
+				line-height: 100%;
+			}
+			
+			.nc3-c-gheader-dfHeader__logo {
+				background-color: #e60012;
+				margin: 0;
+				width: 228px;
+				height: 75px;
+			}
+			
+			.nc3-c-gheader-dfHeader__logo svg {
+				height: 26.13px;
+				width: 99.99px;
+				margin-top: 25px;
+			}
+			/*Five marks in the top middle*/
+			
+			.nc3-c-gheader-dfHeader__main {
+				display: inline;
+				list-style-type: none;
+				white-space: nowrap;
+				padding: 0px;
+			}
+			
+			.nc3-c-gheader-dfHeader__main li {
+				display: inline-block;
+			}
+			
+			.nc3-c-gheader-dfHeader__main svg {
+				width: 19px;
+				height: 19px;
+			}
+			
+			.nc3-c-gheader-dfHeader__main a {
+				text-decoration: none;
+				color: #3C3C3C;
+			}
+			
+			.nc3-c-gheader-dfHeader__main a:hover {
+				color: #e60012;
+			}
+			
+			.nc3-c-gheader-dfHeader__mainItem {
+				display: table-cell;
+				vertical-align: middle;
+				align-content: center;
+				text-align: center;
+			}
+			
+			.nc3-c-gheader-dfHeader__mainItem--hardware {
+				width: 300.98px;
+			}
+			
+			.nc3-c-gheader-dfHeader__mainItem--software {
+				width: 253.31px;
+			}
+			
+			.nc3-c-gheader-dfHeader__mainItem--topics {
+				width: 243.31px;
+			}
+			
+			.nc3-c-gheader-dfHeader__mainItem--character {
+				width: 260.31px;
+			}
+			
+			.nc3-c-gheader-dfHeader__mainItem--support {
+				width: 270.98px;
+			}
+			/*Three bottom's ul class*/
+			
+			.nc3-c-gheader-dfHeader__subItem {
+				display: table-cell;
+				vertical-align: middle;
+				align-content: center;
+				text-align: center;
+			}
+			
+			.nc3-c-gheader-dfHeader__sub {
+				display: inline;
+				list-style-type: none;
+				white-space: nowrap;
+				padding: 0px;
+			}
+			
+			.nc3-c-gheader-dfHeader__sub li {
+				display: inline-block;
+				width: 77px;
+			}
+			
+			.nc3-c-gheader-dfHeader__sub svg {
+				width: 19px;
+				height: 19px;
+			}
+			
+			.nc3-c-gheader-dfHeader__sub a {
+				text-decoration: none;
+				color: #3C3C3C;
+			}
+			
+			.nc3-c-gheader-dfHeader__sub a:hover {
+				color: #e60012;
+			}
+			/*.nc3-c-gheader-dfHeader__sub a:hover, path{
+			filter: drop-shadow(705px 0 0 #FF0000);
+			color: #e60012;
+		}*/
+			
+			.nc3-c-gheader-dfHeader__label {
+				font-size: 12px;
+				margin-top: 0px;
+			}
+			
+			.toptable {
+				width: 100%;
+				border-bottom: solid 0.5px gainsboro;
+			}
+			
+			#nav1 a {
+				opacity: 0.7;
+				filter: alpha(opacity=70);
+				display: inline-block;
+				line-height: 75px;
+				/*opacity:1;
+		    filter:alpha(opacity=100);*/
+			}
+			
+			#nav1 a:hover {
+				opacity: 1;
+				filter: alpha(opacity=100);
+				fill: #e60012;
+				/*opacity:0.7;
+		    filter:alpha(opacity=70);*/
+			}
+			
+			#nav2 a {
+				opacity: 0.7;
+				filter: alpha(opacity=70);
+				/*opacity:1;
+		    filter:alpha(opacity=100);*/
+			}
+			
+			#nav a:hover {
+				opacity: 1;
+				filter: alpha(opacity=100);
+				fill: #e60012;
+				/*opacity:0.7;
+		    filter:alpha(opacity=70);*/
+			}
+			/**************************************************************************************************/
+			
+			#LongLongGrey {
+				margin: auto;
+				width: 100%;
+				background-color: #FAFAFA;
+				margin-top: 0px;
+				display: table;
+				text-align: center;
+			}
+			
+			#MiddleLongGreyInner {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				/*设置文本水平居中*/
+			}
+			
+			#TableTab1 {
+				width: 100%;
+				text-align: center;
+				color: #666666;
+				height: 37px;
+			}
+			
+			#TableTab1 a {
+				color: #3C3C3C;
+				font-family: helvetica;
+				font-size: 16px;
+				text-decoration: none;
+			}
+			
+			#TableTab1 a:hover {
+				color: #e60012;
+			}
+			
+			#TableTab1 td {
+				border-bottom-color: #666666;
+			}
+			
+			#CartTable {
+				display: none;
+				width: 260px;
+				height: 300px;
+				vertical-align: middle;
+				text-align: left;
+				/*设置文本水平居中*/
+				border-left: 0px;
+				border-right: 0px;
+				border-top: 0px
+				/*border-bottom:thick dotted #E3E3E3;*/
+				line-height: 25px;
+				text-align: center;
+				border-collapse: collapse;
+				padding: 2px;
+			}
+			
+			#CartTable td {
+				width: 248px;
+				height: 35px;
+				border-bottom: thin solid #E3E3E3;
+				text-align: left;
+			}
+			
+			#CartTable a {
+				color: #0070C9;
+				vertical-align: middle;
+				text-decoration: none;
+				size: 10px;
+			}
+			
+			#MarkBoxShopBag {
+				position: absolute;
+				margin: auto;
+				/*margin-left: 1289px;*/
+				margin-top: 77px;
+				width: 100%;
+				height: 237px;
+				background-color: #e60012;
+				/*background-image: url(img/Cart/shoppingBag.png);*/
+				display: table;
+				text-align: center;
+				border-bottom: 1px;
+				/*background-color: #FFFFFF;*/
+				z-index: 6;
+			}
+			
+			.DivColorGrey {
+				text-align: center;
+				background-color: #FAFAFA;
+				width: 100%;
+			}
+			
+			#moji {
+				width: 50%;
+				text-align: left;
+				margin-left: auto;
+				margin-right: auto;
+				color: #888888;
+				font-size: 10px;
+			}
+			
+			#table {
+				width: 900px;
+				height: 300px;
+			}
+			
+			#table a {
+				text-decoration: none;
+				color: #888888;
+			}
+			
+			#table a:hover {
+				color: #E60012;
+			}
+			
+			#First {
+				font-family: "microsoft yahei";
+				font-weight: bold;
+			}
+			
+			span a {
+				text-decoration: none;
+				color: #888888;
+			}
+			
+			a:hover {
+				text-decoration: underline;
+			}

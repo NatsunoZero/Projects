@@ -1,0 +1,109 @@
+.styleForBody {
+	margin: 0;
+	text-align: center;
+}
+
+.nc3-c-gheader-dfHeader__logo {
+	background-color: /*#e60012*/
+	/*yellow*/
+	;
+	width: 135px;
+	height: 75px;
+}
+
+.nc3-c-gheader-dfHeader__logo svg {
+	height: 21.99px;
+	width: 84.17px;
+	margin-top: 17.5px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none
+}
+
+input {
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	font-size: 20px;
+	width: 500px;
+	height: 52px;
+}
+
+select {
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	width: 500px;
+	height: 52px;
+	font-size: 20px;
+}
+
+button {
+	background-color: transparent;
+	border: 0px;
+	outline: none;
+	cursor: pointer;
+}
+
+#top {
+	width: 100%;
+	height: 270px;
+	background-color: black;
+	position: relative;
+	z-index: 1;
+}
+
+.top {
+	-webkit-filter: blur(10px);
+	-ms-filter: blur(10px);
+	filter: blur(10px);
+}
+
+.my_protocol .input_agreement_protocol {
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	display: none;
+}
+
+.my_protocol .input_agreement_protocol+span {
+	width: 15px;
+	height: 15px;
+	background-color: blue;
+	display: inline-block;
+	background: url(../img/icon_checkbox.png) no-repeat;
+	background-position-x: 0px;
+	background-position-y: -25px;
+	position: relative;
+	top: 3px;
+}
+
+.my_protocol .input_agreement_protocol:checked+span {
+	background-position: 0 0px
+}
+
+.floatText {
+	position: absolute;
+	top: 410px;
+	left: 1100px;
+	margin-left: -380px;
+	pointer-events: none;
+	font-size: 30px;
+	color: gray;
+}
+
+input {
+	outline: none;
+}
+
+option {
+	outline: none;
+}
+
+select {
+	outline: none;
+}
